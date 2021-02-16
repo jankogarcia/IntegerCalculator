@@ -25,10 +25,13 @@ namespace CalculatorBE.Services
         public async Task RunProcessAsync(string inputPath, string outputPath)
         {
             if (string.IsNullOrWhiteSpace(inputPath))
-                throw new ArgumentNullException($"Argument inputPath can't be empty or null.");
+                throw new ArgumentNullException("Argument inputPath can't be empty or null.");
 
             if (string.IsNullOrWhiteSpace(outputPath))
-                throw new ArgumentNullException($"Argument outputPath can't be empty or null.");
+                throw new ArgumentNullException("Argument outputPath can't be empty or null.");
+
+            if (!File.Exists(inputPath))
+                throw new FileNotFoundException($"Specified file '{inputPath}' does not exist.");
 
             await ReadAndEnqueue(inputPath);
             await DequeueProcessAndEnqueue();

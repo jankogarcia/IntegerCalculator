@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using CalculatorBE.Services;
 using CalculatorBE.Validators;
 using System;
+using System.IO;
 
 namespace CalculatorTest.TestCalculationService
 {
@@ -37,6 +38,12 @@ namespace CalculatorTest.TestCalculationService
         public async Task RunProcessMissingOutput()
         {
             Assert.ThrowsAsync<ArgumentNullException>(async () => await service.RunProcessAsync(@"C:\tests\input_test1.txt", null));
+        }
+
+        [Test]
+        public async Task RunProcessInputFileDoesNotExist()
+        {
+            Assert.ThrowsAsync<FileNotFoundException>(async () => await service.RunProcessAsync("notexistingfile.txt", "output.txt"));
         }
 
         [TestCase("2.1 + -3 * 2")]
