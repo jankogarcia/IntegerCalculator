@@ -112,7 +112,7 @@ namespace CalculatorTest.TestCalculationService
         [TestCase("++---*/98")]
         [TestCase("98178178*978728987 / 7887 + 2")]
         [TestCase("")]
-        //technically valids (mega big number and missing operands will pass the as valid but we expect a string with information)
+        //technically valids (mega big number and missing operands will pass as valid but we expect a string with information)
         public async Task TechnicallyYesButNotQuite(string expression)
         {
             var passValidation = await service.ValidateExpressionAsync(expression);

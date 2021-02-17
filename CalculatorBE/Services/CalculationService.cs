@@ -31,7 +31,7 @@ namespace CalculatorBE.Services
                 throw new ArgumentNullException("Argument outputPath can't be empty or null.");
 
             if (!File.Exists(inputPath))
-                throw new FileNotFoundException($"Specified file '{inputPath}' does not exist.");
+                throw new FileNotFoundException($"File '{inputPath}' does not exist.");
 
             await ReadAndEnqueue(inputPath);
             await DequeueProcessAndEnqueue();

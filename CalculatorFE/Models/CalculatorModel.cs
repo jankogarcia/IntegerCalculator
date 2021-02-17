@@ -37,7 +37,6 @@ namespace CalculatorFE.Models
                 PropertyChange("InputPath");
             }
         }
-
         public string Expression
         {
             get 
@@ -53,15 +52,13 @@ namespace CalculatorFE.Models
                 }
             }
         }
-
         public string Instructions
         {
             get 
             {
-                return $"Place an expresion with only integer numbers and alghebra operators ['+','-','*' and '*'] {Environment.NewLine} e.g. 1+2+3";
+                return $"Place an expression with only integer numbers and algebra operators ['+','-','*' and '*'] {Environment.NewLine} e.g. 1+2+3";
             }
         }
-
         public string FileNotification 
         {
             get 
@@ -73,7 +70,6 @@ namespace CalculatorFE.Models
                 PropertyChange("FileNotification");
             }
         }
-
         public string ExpressionNotification
         {
             get 
@@ -86,7 +82,6 @@ namespace CalculatorFE.Models
                 PropertyChange("ExpressionNotification");
             }
         }
-
 
         public CalculatorModel()
         {

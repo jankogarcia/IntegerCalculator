@@ -20,7 +20,6 @@ namespace CalculatorFE.ViewModels
         public ICommand RunExpressionFile { get; private set; }
         public ICommand ShowInputDialog { get; private set; }
         public ICommand ShowOutputDialog { get; private set; }
-
         public ICommand StartExpressionFile { get; private set; }
 
         public CalculatorViewModel()
@@ -28,8 +27,8 @@ namespace CalculatorFE.ViewModels
             _calculatorModel = new CalculatorModel()
             {
                 Expression = "0",
-                InputPath = @"input.txt",
-                OutputPath = @"output.txt",
+                InputPath = "input.txt",
+                OutputPath = "output.txt",
                 FileNotification = string.Empty,
                 ExpressionNotification = string.Empty
             };
@@ -104,7 +103,7 @@ namespace CalculatorFE.ViewModels
             finally
             {
                 if(finishCorrectly)
-                    Calculator.FileNotification = "Work is done.";
+                    Calculator.FileNotification = "Job is done.";
             }
         }
 
